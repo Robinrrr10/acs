@@ -23,7 +23,7 @@ public class SignUp {
 		Status status = new Status();
 		status.setState(State.SUCCESS);
 		status.setStatusCoder(1001);
-		status.setStatusMessage("SignUp successfull");
+		status.setStatusMessage("SignUp successfully");
 		signUpResponse.setStatus(status);
 		return signUpResponse;
 	}
