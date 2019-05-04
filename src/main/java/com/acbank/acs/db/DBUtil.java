@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class DBUtil {
 
 	static String mySqlDriverClass = "com.mysql.jdbc.Driver";
-	static String mysqlUrl = "jdbc:mysql://localhost:3306/myrestproject";
+	static String mysqlUrl = "jdbc:mysql://localhost:3306/acs";
 	static String mysqlUser = "root";
 	static String mysqlPassword = "root";
 	

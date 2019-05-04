@@ -7,16 +7,16 @@ import com.acbank.acs.commons.constant.State;
 @XmlRootElement(name = "status")
 public class Status {
 
-	private int statusCoder;
+	private int statusCode;
 	private String statusMessage;
 	private State state;
 
-	public int getStatusCoder() {
-		return statusCoder;
+	public int getStatusCode() {
+		return statusCode;
 	}
 
-	public void setStatusCoder(int statusCoder) {
-		this.statusCoder = statusCoder;
+	public void setStatusCode(int statusCode) {
+		this.statusCode = statusCode;
 	}
 
 	public String getStatusMessage() {

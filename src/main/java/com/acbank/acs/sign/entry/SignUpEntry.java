@@ -9,7 +9,7 @@ public class SignUpEntry {
 	private String password;
 	private String email;
 	private Long accountNo;
-	private Long audhaar;
+	private Long aadhaar;
 	
 	public String getName() {
 		return name;
@@ -35,10 +35,10 @@ public class SignUpEntry {
 	public void setAccountNo(Long accountNo) {
 		this.accountNo = accountNo;
 	}
-	public Long getAudhaar() {
-		return audhaar;
+	public Long getAadhaar() {
+		return aadhaar;
 	}
-	public void setAudhaar(Long audhaar) {
-		this.audhaar = audhaar;
+	public void setAadhaar(Long aadhaar) {
+		this.aadhaar = aadhaar;
 	}
 }

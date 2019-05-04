@@ -1,13 +1,14 @@
 package com.acbank.acs.sign.api;
 
+import java.sql.SQLException;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.acbank.acs.commons.constant.State;
-import com.acbank.acs.commons.entry.Status;
+import com.acbank.acs.sign.SignUpHelper;
 import com.acbank.acs.sign.entry.SignUpEntry;
 import com.acbank.acs.sign.entry.SignUpResponse;
 
@@ -16,15 +17,12 @@ import com.acbank.acs.sign.entry.SignUpResponse;
 @Path("/signUp")
 public class SignUp {
 
+	SignUpHelper signUpHelper = new SignUpHelper();
+
 	@POST
 	@Path("/do")
-	public SignUpResponse doSignIn(SignUpEntry signUpEntry) {
-		SignUpResponse signUpResponse = new SignUpResponse();
-		Status status = new Status();
-		status.setState(State.SUCCESS);
-		status.setStatusCoder(1001);
-		status.setStatusMessage("SignUp successfully");
-		signUpResponse.setStatus(status);
+	public SignUpResponse doSignIn(SignUpEntry signUpEntry) throws ClassNotFoundException, SQLException {
+		SignUpResponse signUpResponse = signUpHelper.signUp(signUpEntry);
 		return signUpResponse;
 	}
 
