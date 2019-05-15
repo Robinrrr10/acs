@@ -60,10 +60,10 @@ public class SignUpHelper {
 
 	public boolean itHasMandatoryParameterForSignUp(SignUpEntry signUpEntry) {
 		boolean itHas = false;
-		if (signUpEntry.getEmail()!=null && signUpEntry.getPassword()!=null
-				&& signUpEntry.getName()!=null && signUpEntry.getAadhaar()!=null
-				&& !signUpEntry.getEmail().equals("") && !signUpEntry.getPassword().equals("")
-				&& !signUpEntry.getName().equals("") && !signUpEntry.getAadhaar().equals(0l)) {
+		if (signUpEntry.getEmail() != null && signUpEntry.getPassword() != null && signUpEntry.getName() != null
+				&& signUpEntry.getAadhaar() != null && !signUpEntry.getEmail().equals("")
+				&& !signUpEntry.getPassword().equals("") && !signUpEntry.getName().equals("")
+				&& !signUpEntry.getAadhaar().equals(0l)) {
 			itHas = true;
 		}
 		return itHas;
