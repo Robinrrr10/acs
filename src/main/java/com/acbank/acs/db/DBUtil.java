@@ -14,10 +14,15 @@ public class DBUtil {
 	//static String mysqlPassword = "root";
 	
 	static String mySqlDriverClass = "com.mysql.jdbc.Driver";
-	static String mysqlUrl = System.getProperty("JDBC_URL");
-	static String mysqlUser = System.getProperty("JDBC_USER");
-	static String mysqlPassword = System.getProperty("JDBC_PASSWORD");
+	static String mysqlUrl = System.getenv("JDBC_URL");
+	static String mysqlUser = System.getenv("JDBC_USER");
+	static String mysqlPassword = System.getenv("JDBC_PASSWORD");
 
+	//static String mySqlDriverClass = "com.mysql.jdbc.Driver";
+    //static String mysqlUrl = "jdbc:mysql://192.168.40.128:3306/acs";
+	//static String mysqlUser = "root";
+	//static String mysqlPassword = "root";
+	
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Class.forName(mySqlDriverClass);
 		Connection connection = DriverManager.getConnection(mysqlUrl, mysqlUser, mysqlPassword);
