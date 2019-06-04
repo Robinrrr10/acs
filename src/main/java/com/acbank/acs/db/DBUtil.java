@@ -8,10 +8,15 @@ import java.sql.SQLException;
 
 public class DBUtil {
 
+	//static String mySqlDriverClass = "com.mysql.jdbc.Driver";
+	//static String mysqlUrl = "jdbc:mysql://192.168.40.124:3306/acs";
+	//static String mysqlUser = "root";
+	//static String mysqlPassword = "root";
+	
 	static String mySqlDriverClass = "com.mysql.jdbc.Driver";
-	static String mysqlUrl = "jdbc:mysql://192.168.40.124:3306/acs";
-	static String mysqlUser = "root";
-	static String mysqlPassword = "root";
+	static String mysqlUrl = System.getProperty("JDBC_URL");
+	static String mysqlUser = System.getProperty("JDBC_USER");
+	static String mysqlPassword = System.getProperty("JDBC_PASSWORD");
 
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Class.forName(mySqlDriverClass);
