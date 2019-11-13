@@ -8,26 +8,36 @@ import java.sql.SQLException;
 
 public class DBUtil {
 
+	//static String mySqlDriverClass = "com.mysql.jdbc.Driver";
+	//static String mysqlUrl = "jdbc:mysql://192.168.40.124:3306/acs";
+	//static String mysqlUser = "root";
+	//static String mysqlPassword = "root";
+	
 	static String mySqlDriverClass = "com.mysql.jdbc.Driver";
-	static String mysqlUrl = "jdbc:mysql://localhost:3306/acs";
-	static String mysqlUser = "root";
-	static String mysqlPassword = "root";
+	static String mysqlUrl = System.getenv("JDBC_URL");
+	static String mysqlUser = System.getenv("JDBC_USER");
+	static String mysqlPassword = System.getenv("JDBC_PASSWORD");
+
+	//static String mySqlDriverClass = "com.mysql.jdbc.Driver";
+    //static String mysqlUrl = "jdbc:mysql://192.168.40.128:3306/acs";
+	//static String mysqlUser = "root";
+	//static String mysqlPassword = "root";
 	
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Class.forName(mySqlDriverClass);
 		Connection connection = DriverManager.getConnection(mysqlUrl, mysqlUser, mysqlPassword);
 		return connection;
 	}
-	
+
 	public static int update(PreparedStatement preparedStatement) throws SQLException {
 		int result = 0;
 		result = preparedStatement.executeUpdate();
 		return result;
 	}
-	
+
 	public static ResultSet fetch(PreparedStatement preparedStatement) throws SQLException {
 		ResultSet result = preparedStatement.executeQuery();
 		return result;
 	}
-	
+
 }
